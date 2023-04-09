@@ -1,0 +1,12 @@
+{
+  "name": "CS",
+  "version": "1.0.0",
+  "description": "CS-frontend course",
+  "main": "index.js",
+  "repository": "https://github.com/AlexPo91/CS-course.git",
+  "author": "Aliaksei Paliachynski <aliaksei.paliachynski@startmatter.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
+}
