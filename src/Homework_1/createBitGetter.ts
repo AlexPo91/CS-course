@@ -3,7 +3,7 @@ import { BitGetter } from './interface'
 export const createBitGetter = (bytes: Uint8Array): BitGetter => {
 
     const validate = (byteIndex: number, bitIndex: number): void => {
-        if (byteIndex < 0 && byteIndex >= bytes.length) {
+        if (byteIndex < 0 || byteIndex >= bytes.length) {
             throw new Error("Invalid byteIndex")
         }
         if (bitIndex < 0) {
@@ -23,9 +23,9 @@ export const createBitGetter = (bytes: Uint8Array): BitGetter => {
         validate(byteIndex, bitIndex)
         if (value === undefined) throw new Error('Value is missing')
 
+        const byte = bytes[byteIndex]
         const mask = 1 << bitIndex;
-        const newValue = value === 0 ? value & ~mask : value | mask;
-
+        const newValue = value === 0 ? byte & ~mask : byte | mask;
         bytes[byteIndex] = newValue;
     }
     return {
