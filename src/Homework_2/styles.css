@@ -1,0 +1,23 @@
+.button-wrap {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#canvas-wrap {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+canvas {
+  width: 50%;
+}
