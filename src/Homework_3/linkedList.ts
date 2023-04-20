@@ -19,11 +19,11 @@ class LinkedList<T> {
         this.last = null;
     }
 
-    isEmpty() {
+    isEmpty(): boolean {
         return !this.first;
     }
 
-    addLast(value: T): void {
+    addLast(value: T): LinkedList<T> {
         const newLinkNode = new LinkNode(value);
         if (this.isEmpty()) {
             this.first = newLinkNode;
@@ -32,9 +32,10 @@ class LinkedList<T> {
             newLinkNode.prev = this.last;
         }
         this.last = newLinkNode;
+        return this;
     }
 
-    addFirst(value: T): void {
+    addFirst(value: T): LinkedList<T> {
         const newLinkNode = new LinkNode(value);
         if (this.isEmpty()) {
             this.last = newLinkNode;
@@ -43,24 +44,35 @@ class LinkedList<T> {
             newLinkNode.next = this.first;
         }
         this.first = newLinkNode;
+        return this;
     }
 
-    removeLast(): void {
+    removeLast(): T | null | Error {
+        if (this.isEmpty()) {
+            return new Error('List is empty!')
+        }
+        const temp = this.last
         if (this.first!.next === null) {
             this.first = null;
         } else {
             this.last!.prev!.next = null;
         }
         this.last = this.last!.prev;
+        return temp!?.value;
     }
 
-    removeFirst(): void {
-        if (this.first === null) {
+    removeFirst(): T | null | Error {
+        if (this.isEmpty()) {
+            return new Error('List is empty!')
+        }
+        const temp = this.first
+        if (this.first!.next === null) {
             this.last = null;
         } else {
-            this.first.next!.prev = null;
+            this.first!.next!.prev = null;
         }
         this.first = this.first!.next;
+        return temp!?.value
     }
 
     *[Symbol.iterator]() {
@@ -70,22 +82,6 @@ class LinkedList<T> {
             current = current.next;
         }
     }
-}
-
-const linkedList = new LinkedList()
-
-
-
-linkedList.addFirst(5);
-linkedList.addFirst(4);
-linkedList.addFirst(3);
-linkedList.addFirst(2);
-linkedList.addFirst(1);
-
-linkedList.removeLast();
-linkedList.removeFirst();
-for (const value of linkedList) {
-    console.log(value);
 }
 
 export { LinkedList };
