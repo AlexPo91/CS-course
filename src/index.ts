@@ -25,15 +25,15 @@
 // console.log(queue.shift()); // 12
 // console.log(queue.shift()); // Exception
 
-// import { Dequeue } from "./Homework_4/Dequeue";
+import { Dequeue } from './Homework_4/Dequeue';
 
-// const dequeue = new Dequeue();
+const dequeue = new Dequeue();
 
-// dequeue.push(10);
-// dequeue.unshift(11);
-// dequeue.push(12);
+dequeue.push(10);
+dequeue.unshift(11);
+dequeue.push(12);
 
-// console.log(dequeue.pop()); // 12
-// console.log(dequeue.shift()); // 11
-// console.log(dequeue.pop()); // 10
-// console.log(dequeue.pop()); // Exception
+console.log(dequeue.pop()); // 12
+console.log(dequeue.shift()); // 11
+console.log(dequeue.pop()); // 10
+console.log(dequeue.pop()); // Exception

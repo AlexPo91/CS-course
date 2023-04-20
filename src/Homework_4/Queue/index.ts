@@ -1,22 +1,23 @@
-import { LinkedList } from "../../Homework_3";
+import { LinkedList } from '../../Homework_3';
 
 class Queue<T> {
-    #list: LinkedList<T>;
-    constructor() {
-        this.#list = new LinkedList();
-    }
+  #list: LinkedList<T>;
 
-    get head() {
-        return this.#list.first!?.value
-    }
+  constructor() {
+    this.#list = new LinkedList();
+  }
 
-    push(value: T) {
-        this.#list.addLast(value)
-    }
+  get head() {
+    return this.#list.first?.value;
+  }
 
-    shift() {
-        return this.#list.removeFirst()
-    }
+  push(value: T) {
+    this.#list.addLast(value);
+  }
 
+  shift() {
+    return this.#list.removeFirst();
+  }
 }
+
 export { Queue };

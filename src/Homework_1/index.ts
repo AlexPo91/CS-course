@@ -1,4 +1,4 @@
-import { createBitGetter } from "./createBitGetter";
+import { createBitGetter } from './createBitGetter';
 
 // const bitGetter = createBitGetter(new Uint8Array([0b1110, 0b1101]));
 
@@ -8,4 +8,4 @@ import { createBitGetter } from "./createBitGetter";
 // console.log(bitGetter.set(0, 1, 1)); //
 // console.log(bitGetter.get(0, 1)); // 0
 
-export { createBitGetter }
+export { createBitGetter };
