@@ -1,5 +1,5 @@
 {
-  "name": "CS",
+  "name": "cs",
   "version": "1.0.0",
   "description": "CS-frontend course",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "start": "nodemon index.ts",
+    "start": "webpack serve",
     "test": "jest"
   },
   "devDependencies": {
@@ -16,11 +16,27 @@
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-typescript": "^7.21.4",
     "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.12",
+    "@types/webpack": "^5.28.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
     "babel-jest": "^29.5.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.38.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "html-webpack-plugin": "5",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
+    "prettier": "^2.8.7",
     "ts-jest": "^29.1.0",
+    "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.3"
   }
 }
